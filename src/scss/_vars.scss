@@ -1,0 +1,177 @@
+@import "mixins";
+
+:root {
+  --white: #ffffff;
+  --grey: #CFD0D1;
+  --black: #11151A;
+  --yellow: linear-gradient(180deg, #FFD600 0%, #FFB800 100%);
+  --grey2: rgba(255, 255, 255, 0.1);
+  --white-grey: #AFB2B4;
+  --blue: linear-gradient(156.37deg, #68C0FF 7.93%, #207ACC 90.81%);
+  --yellow2: #FFD600;
+}
+
+.container {
+  max-width: 1172px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.h-title {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 36px;
+  /* identical to box height, or 200% */
+
+
+  color: rgba(255, 255, 255, 0.8);
+  transition: all .3s ease;
+
+
+  &:hover {
+    color: #FFD201;
+  }
+}
+
+.super-title {
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 80px;
+  /* identical to box height, or 111% */
+
+  text-align: center;
+  letter-spacing: -2px;
+
+  color: #FFFFFF;
+
+  text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
+}
+
+.sub-title {
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 40px;
+  /* or 167% */
+
+  text-align: center;
+
+  color: rgba(255, 255, 255, 0.8);
+
+}
+
+.title {
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 92px;
+  /* identical to box height, or 192% */
+
+  text-align: center;
+
+  color: #FFFFFF;
+
+  text-shadow: 0px 2px 25px rgba(0, 0, 0, 0.6);
+}
+
+.paddings {
+  padding: 80px 0px !important;
+  position: relative;
+  z-index: 50;
+  background: var(--black);
+}
+
+.d-none {
+  display: none !important;
+}
+
+
+
+
+
+
+@include px1200 {
+  .container {
+    max-width: 768px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  .paddings {
+    padding: 60px 0px !important;
+  }
+
+  .h-title {
+    font-size: 14px;
+    line-height: 28px;
+    /* identical to box height, or 200% */
+
+
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .super-title {
+    font-weight: bold;
+    font-size: 52px;
+    line-height: 60px;
+    /* identical to box height, or 115% */
+    letter-spacing: 0px;
+
+    text-align: center;
+
+    color: #FFFFFF;
+
+    text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
+  }
+
+  .sub-title {
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 36px;
+    /* or 180% */
+
+    text-align: center;
+
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+}
+
+
+@include px768 {
+  .container {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  .paddings {
+    padding: 40px 0px !important;
+  }
+
+  .super-title {
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 40px;
+    /* or 125% */
+    letter-spacing: 0px;
+
+    text-align: center;
+
+    color: #FFFFFF;
+
+    text-shadow: 0px 4px 18px rgba(0, 0, 0, 0.3);
+  }
+
+  .sub-title {
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 24px;
+    /* or 160% */
+
+    text-align: center;
+
+    color: rgba(255, 255, 255, 0.8);
+  }
+}

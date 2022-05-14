@@ -1,0 +1,320 @@
+/* Config */
+$color-bg: #111;
+$color-particle: #fff;
+$spacing: 2560px;
+$time-1: 80s;
+$time-2: 160s;
+$time-3: 240s;
+$time-4: 700s;
+
+/* Pauls awesome mixin */
+@function particles($max) {
+  $val: 0px 0px $color-particle;
+
+  @for $i from 1 through $max {
+    $val: #{$val},
+    random($spacing)+px random($spacing)+px $color-particle;
+  }
+
+  @return $val;
+}
+
+@mixin particles($max) {
+  box-shadow: particles($max);
+}
+
+
+.page-bg,
+.animation-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-bg {  
+  background-size: cover;
+  z-index: -1;
+}
+
+.particle,
+.particle:after {
+  background: transparent;
+}
+
+.particle:after {
+  position: absolute;
+  content: "";
+  top: $spacing;
+}
+
+.particle-1 {
+  animation: animParticle $time-1 linear infinite;
+  @include particles(600);
+  height: 1px;
+  width: 1px;
+  border-radius: 50%;
+}
+
+.particle-1:after {
+  @include particles(600);
+  height: 1px;
+  width: 1px;
+  border-radius: 50%;
+}
+
+.particle-2 {
+  animation: animParticle $time-2 linear infinite;
+  @include particles(200);
+  height: 2px;
+  width: 2px;
+  border-radius: 50%;
+}
+
+.particle-2:after {
+  @include particles(200);
+  height: 2px;
+  width: 2px;
+  border-radius: 50%;
+}
+
+.particle-3 {
+  animation: animParticle $time-3 linear infinite;
+  @include particles(100);
+  height: 3px;
+  width: 3px;
+  border-radius: 50%;
+}
+
+.particle-3:after {
+  @include particles(100);
+  height: 3px;
+  width: 3px;
+  border-radius: 50%;
+}
+
+.particle-4 {
+  animation: animParticle $time-4 linear infinite;
+  @include particles(400);
+  height: 1px;
+  width: 1px;
+  border-radius: 50%;
+}
+
+.particle-4:after {
+  @include particles(400);
+  height: 1px;
+  width: 1px;
+  border-radius: 50%;
+}
+
+@keyframes animParticle {
+  from {
+    transform: translateY(-1000px);
+  }
+
+  to {
+    transform: translateY($spacing * +0.5);
+  }
+
+}
+
+.page-wrapper {
+  text-align: center;
+  color: #fff;
+  z-index: -1;
+}
+
+.opacity {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 15vh;  
+  background: linear-gradient(180deg, rgba(16, 21, 26, 0) 0%, #10151A 100%);
+  z-index: 9;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.home {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--black);
+  color: var(--white);
+  position: relative;
+  scroll-behavior: smooth;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 5;
+    padding: 100px 0px;
+  }
+
+  &__text {        
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 60px;
+  }
+
+  &__text-title {
+    text-align: center;
+    margin-bottom: 32px;    
+  }
+
+  &__text-title-dao {
+    position: relative;
+
+    &::before {
+      content: url("../img/paints1.png");
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: -1;
+      top: 20px;
+      left: -10px;
+    }
+  }
+
+  &__text-subtitle {
+    text-align: center;
+    max-width: 700px;
+    
+  }
+
+  &__btn {
+    padding: 16px 32px;
+    background: linear-gradient(180deg, #FFD600 0%, #FFB800 100%);
+    box-shadow: 0px 9px 44px rgba(255, 214, 0, 0.19);
+    border-radius: 16px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 36px;
+    /* identical to box height, or 180% */
+
+    text-align: center;
+
+    color: #10151A;
+    align-self: center;
+    box-shadow: 0px 5px 34px rgba(255, 214, 0, 0.19);
+    &:hover {
+      background: linear-gradient(180deg, #FFDE2E 0%, #FFC42E 100%);
+      box-shadow: 0px 9px 44px rgba(255, 214, 0, 0.25);
+    }
+    &:active {
+      background: linear-gradient(180deg, #E3BF00 0%, #E4A400 100%);
+    }
+  }
+}
+
+
+
+
+
+
+
+
+@include px1200 {
+  .home {
+
+    &__inner {}
+
+    &__text {
+      margin-bottom: 52px;
+    }
+
+    &__text-title {
+      margin-bottom: 24px;
+    }
+
+    &__text-title-dao {
+      &::before {
+        transform: scale(.75);        
+        top: 16px;
+        left: -20px;
+      }
+    }
+
+    &__text-subtitle {
+      
+    }
+
+    &__btn {
+      font-size: 18px;
+      line-height: 36px;
+      padding: 12px 24px;
+    }
+  }
+}
+
+
+
+
+@include px768 {
+  .home {
+
+    &__inner {}
+
+    &__text {
+      margin-bottom: 32px;
+    }
+
+    &__text-title {
+      font-size: 36px;
+      margin-bottom: 16px;
+      max-width: 250px;
+    }
+
+    &__text-title-dao {
+
+      &::before {
+        left: -20px;
+        top: 10px;
+        transform: scale(0.5);
+      }
+    }
+
+    &__text-subtitle {
+      font-size: 15px;
+      line-height: 24px;
+    }
+
+    &__btn {
+      font-size: 15px;
+      line-height: 24px;
+      box-shadow: 0px 9px 44px rgba(255, 214, 0, 0.19);
+      border-radius: 12px;
+      padding: 12px 20px;
+    }
+  }
+}

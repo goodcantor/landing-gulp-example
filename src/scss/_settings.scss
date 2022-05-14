@@ -1,0 +1,41 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
+.site-container{
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "PTMono", monospace;
+  background-color: var(--black);
+  scroll-behavior: smooth;
+
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+.scroll-hidden {
+  overflow: hidden;
+}

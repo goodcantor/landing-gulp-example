@@ -1,0 +1,56 @@
+@mixin px1680 {
+  @media only screen and (max-width : 1680px) {
+    @content;
+  }
+}
+@mixin px1366 {
+  @media only screen and (max-width : 1366px) {
+    @content;
+  }
+}
+@mixin px1280 {
+  @media only screen and (max-width : 1280px) {
+    @content;
+  }
+}
+@mixin px1200 {
+  @media only screen and (max-width : 1200px) {
+    @content;
+  }
+}
+@mixin px1024 {
+  @media only screen and (max-width : 1024px) {
+    @content;
+  }
+}
+@mixin px800 {
+  @media only screen and (max-width : 800px) {
+    @content;
+  }
+}
+@mixin px768 {
+  @media only screen and (max-width : 768px) {
+    @content;
+  }
+}
+@mixin px600 {
+  @media only screen and (max-width : 600px) {
+    @content;
+  }
+}
+@mixin px533 {
+  @media only screen and (max-width : 533px) {
+    @content;
+  }
+}
+@mixin px360 {
+  @media only screen and (max-width : 360px) {
+    @content;
+  }
+}
+@mixin px320 {
+  @media only screen and (max-width : 320px) {
+    @content;
+  }
+}
+
